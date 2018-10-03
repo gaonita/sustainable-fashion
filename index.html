@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <meta property="og:url"                content="www.behindthestrings.info" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Behind the Strings" />
+    <meta property="og:description"        content="How much does fashion item impact on environment?" />
+    <meta property="og:image"              content="../image/end.jpg" />
+
+    <title>Behindthestrings</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/sustainable.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+</head>
+
+<body>
+<div class="top">
+    <img src="img/mainbackground.jpg" alt="" class="tagbg">
+    <div class="logo1">
+        <img src="img/logo.png" alt="logo" height="120px" width="120px">
+    </div>
+</div>
+
+
+<div id="search">
+    <div id = "first"> Online shopping? <br> Let's check what's behind it.
+    </div>
+
+    <div id = "second">
+        <p>The fashion industry is causing harm to our environment.<br>
+            Paste a link to an item you are looking to buy and we’ll give you some information on it’s impact!</p>
+        <form>
+            <input type="text" id="url" placeholder="Paste the url here - English website only!" required>
+        <br>
+        <br>
+        <input type="submit" value="Go" class="button">
+
+        </form>
+    </div>
+</div>
+
+
+<div id="loading">
+    <div class="spin">
+        <h1 style="text-align: center">Loading</h1>
+        <div class="lds-dual-ring"></div>
+        <br><br>
+        <div id="quote" style="text-align: center"></div>
+    </div>
+</div>
+
+
+<div id="results">
+    <h1 id="itemcontain">This item contains: <div id="allMaterial"></div></h1>
+
+    <!--<div class="explainChart">What does this mean? How does this material destroy environment? </div>-->
+
+    <div class="chart-container">
+        <div class="chart-info">
+            <div class="chartTitle">
+                <strong>Environmental Impact</strong><br><br>
+            </div>
+            <div class="chart-text">
+                This chart shows what “areas” the different materials have impact on.
+                The scale ranges from 1-6. A score of 6 means relatively high impact
+                and a score of 1 is “relatively low impact”. A score of 0 means “not applicable”. <br><br>
+                This is meant to give a visual overview of what the problem areas of different materials are,
+                it does not suggest that one is better than the other. This data is based on research by DEFRA. The study can be found in the bottom of this page.
+                <br><br>*GHG stands for greenhouse gas.
+            </div>
+        </div>
+        <div class="chart-radar">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+
+    <div class="result-container">
+
+        <div class="item" id="infoCotton">
+            <div class="matpic" id="cottonpic">
+                <p class="pictxt">Cotton</p>
+            </div>
+            <div class="proconbox">
+                <div class="pros">
+                    <ul>
+                        <li class="pc"><strong>Pros</strong></li>
+                        <br>
+                        <li>Natural fibre</li>
+                        <br>
+                        <li>Biodegradable</li>
+                        <br>
+                        <li>Recyclable (with limitations) </li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <ul>
+                        <li class="pc"><strong>Cons</strong></li>
+                        <br>
+                        <li>Uses large amounts of water in production. Approx 20,000 litres per kilo</li>
+                        <br>
+                        <li>A pesticide intensive crop, harmful to humans</li>
+                        <br>
+                        <li>Uses agricultural land, needed by people to grow their own food</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="infoWool">
+            <div class="matpic" id="woolpic">
+                <p class="pictxt">Wool</p>
+            </div>
+            <div class="proconbox">
+                <div class="pros">
+                    <ul>
+                        <li class="pc"><strong>Pros</strong></li>
+                        <br>
+                        <li>Biodegradable</li>
+                        <br>
+                        <li>Generally a durable material</li>
+                        <br>
+                        <li>Does not need a lot of washing </li>
+                        <br>
+                        <li>Generally environmentally friendly dying process </li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <ul>
+                        <li class="pc"><strong>Cons</strong></li>
+                        <br>
+                        <li>Animal abuse issues within the wool farming industries</li>
+                        <br>
+                        <li>Greenhouse gas emissions from keeping livestock</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item" id="infoNylon">
+            <div class="matpic" id="nylonpic">
+                <p class="pictxt">Nylon</p>
+            </div>
+            <div class="proconbox">
+                <div class="pros">
+                    <ul>
+                        <li class="pc"><strong>Pros</strong></li>
+                        <br>
+                        <li>Recyclable (with limitations)</li>
+                        <br>
+                        <li>Generally a durable material</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <ul>
+                        <li class="pc"><strong>Cons</strong></li>
+                        <br>
+                        <li>Does not biodegrade</li>
+                        <br>
+                        <li>Energy and chemical heavy production process</li>
+                        <br>
+                        <li>Produced by oil-based and fossil fuel substances</li>
+                        <br>
+                        <li>Plastic micro-fibers can be released during washing and end up in our water supplies
+                        </li>
+                        <br>
+                        <li>Emits a lot of greenhouse gases in production</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="item" id="infoPolyester">
+            <div class="matpic" id="polyesterpic">
+                <p class="pictxt">Polyester</p>
+            </div>
+            <div class="proconbox">
+                <div class="pros">
+                    <ul>
+                        <li class="pc"><strong>Pros</strong></li>
+                        <br>
+                        <li>A generally durable material</li>
+                        <br>
+                        <li>Recyclable (with limitations)</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <ul>
+                    <li class="pc"><strong>Cons</strong></li>
+                    <br>
+                    <li>Does not biodegrade</li>
+                    <br>
+                    <li>Energy and chemical heavy production process</li>
+                    <br>
+                    <li>Made from fossil fuels and oil-based substances</li>
+                    <br>
+                    <li>Plastic micro-fibers release when washing and end up in our water supplies
+                    </li>
+                    <br>
+                    <li>Emits a lot of greenhouse gases in production</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="infoAcrylic">
+            <div class="matpic" id="acrylicpic">
+                <p class="pictxt">Acrylic</p>
+            </div>
+            <div class="proconbox">
+                <div class="pros">
+                    <ul>
+                        <li class="pc"><strong>Pros</strong></li>
+                        <br>
+                        <li>Generally a durable material</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <ul>
+                        <li class="pc"><strong>Cons</strong></li>
+                        <br>
+                        <li>Not easily recyclable</li>
+                        <br>
+                        <li>Doesn’t biodegrade</li>
+                        <br>
+                        <li>Energy and chemical heavy production process</li>
+                        <br>
+                        <li>Made from fossil fuels and oil-based substances
+                        </li>
+                        <br>
+                        <li>Plastic micro-fibers release when washing and end up in our water supplies</li>
+                        <br>
+                        <li>Emits a lot of greenhouse gases in production</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="item" id="infoViscose">
+            <div class="matpic" id="viscosepic">
+                <p class="pictxt">Viscose</p>
+            </div>
+            <div class="proconbox">
+                <div class="pros">
+                    <ul>
+                        <li class="pc"><strong>Pros</strong></li>
+                        <br>
+                        <li>Made from wood pulp,  renewable source</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <ul>
+                        <li class="pc"><strong>Cons</strong></li>
+                        <br>
+                        <li>Not easily recyclable</li>
+                        <br>
+                        <li>Generally needs to be dry-cleaned</li>
+                        <br>
+                        <li>Generally non-durable</li>
+                        <br>
+                        <li>Production causes deforestation
+                        </li>
+                        <br>
+                        <li>Production causes air-pollution</li>
+                        <br>
+                        <li>Production pollutes water</li>
+                        <br>
+                        <li>Production uses chemicals, toxic to humans and the environment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="whatdo">
+
+        <h1 class="wd">What can I do?</h1>
+        <div class="whatdotip">
+            <div class="whatdopic">
+                <img src="img/icon1.png" alt="" width="100px" height="100px">
+            </div>
+            <div class="whatdotxt">
+                Try to buy less, think about if you really need it.
+            </div>
+            <div class="whatdopic">
+                <img src="img/icon2.png" alt="" width="100px" height="100px">
+            </div>
+            <div class="whatdotxt">
+                Buy things that will last, and that will keep its value after use.
+            </div>
+        </div>
+
+        <div class="whatdotip">
+            <div class="whatdopic">
+                <img src="img/icon3.png" alt="" width="100px" height="100px">
+            </div>
+            <div class="whatdotxt">
+                Find a second hand option.
+            </div>
+            <div class="whatdopic">
+                <img src="img/icon4.png" alt="" width="100px" height="100px">
+            </div>
+            <div class="whatdotxt">
+                Choose items that are biodegradable and/or easily recyclable.
+            </div>
+        </div>
+
+        <div class="whatdotip">
+            <div class="whatdopic">
+                <img src="img/icon5.png" alt="" width="100px" height="100px">
+            </div>
+            <div class="whatdotxt">
+                Avoid unnecessary mixtures of clothing as these are more difficult to recycle.
+                <br>Although, mixed fabrics can sometimes be more durable. Make an informed decision.
+            </div>
+            <div class="whatdopic">
+                <img src="img/icon6.png" alt="" width="100px" height="100px">
+            </div>
+            <div class="whatdotxt">
+                Look for organic and recycled materials.
+                Although, there are certain issues with these types of materials as well.
+                <br>No consumption is the best consumption.
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="endResult">
+
+            <br><br>
+        Missing information?<br>
+        The material your item contains has probably not yet been added to our database. <br>Try using another link to analyze!
+        <br><br>
+        The information on this site is based on a week of research.<br> There are points that can be added and points that can be contradicted.<br>
+        Nothing is ever black on white. Our used sources can be found below.
+
+        <br><br>
+        <button id="noResultButton">Our sources</button>
+
+        <input type="button" class="backButton" value="New Search" onclick="window.location.reload()">
+    </div>
+</div>
+
+
+
+<div id="learnMore">
+    <h1 style="text-align: center">Learn More</h1>
+    <p style="text-align: center">Here You Can Read More About</p>
+    <button class="collapsible">Websites to Check</button>
+    <div class="content">
+        <p><a href="https://www.greenchoices.org/">Greenchoices.org</a> : The green website for eco-living lifestyles</p>
+        <p><a href="https://www.treehugger.com/">Treehugger.com</a> : Which fabrics are most sustainable?</p>
+        <p><a href="https://www.close-the-loop.be/en">Closetheloop.com</a> : About a Circular Fashion Industry</p>
+
+    </div>
+
+    <button class="collapsible">Academic Studies</button>
+    <div class="content">
+        <br><br><a href="http://www.w-program.nu/filer/exjobb/Jelina_Strand.pdf
+">Environmental impact of the Swedish textile consumption -Uppsala Univ.</a>
+        <br><br>
+        <br><a href="http://www.blueben.org/wp-content/uploads/2017/10/2010_mistra_review_of_life_cycle_assessments_of_clothing.pdf">Review of Life Cycle Assessments of Clothing - Oakdene Hollin</a>
+        <br><br>
+        The role and business case for existing and emerging fibres in sustainable clothing - Leeds Univ.
+        <br><br>
+    </div>
+    <button class="collapsible">Good to know</button>
+    <div class="content">
+        <p>Go to Eliot and ask him about the material</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="refresh">
+        <input style="text-align: center" type="button" class="button" value="New Search" onclick="window.location.reload()">
+    </div>
+    <br>
+    <br>
+    <div class="footer">
+        Created by Eliot & Gaon<br>
+        <a href="http://behindthestrings.info" target="_blank">www.behindthestrings.info</a>
+    </div>
+
+
+
+
+</div>
+
+
+
+<script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script crossorigin="anonymous" type="text/javascript" src="js/sustainable.js"></script>
+</body>
+</html>

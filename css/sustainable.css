@@ -1,0 +1,515 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: 0;
+}
+
+ul {
+    color: gray;
+    list-style: none;
+}
+
+@keyframes fadein {
+
+    from { opacity:0; transform:translateY(-100px); }
+    to { opacity:1; transform:translateY(0px); }
+
+}
+
+.fb-share-button {
+    height: 10px;
+}
+
+#itemcontain.fadein {
+    animation:fadein 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.chart-container.fadein {
+    animation:fadein 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.result-container.fadein {
+    animation:fadein 1.5s ease;
+    animation-fill-mode: forwards;
+}
+
+
+.matpic {
+    width: 25%;
+}
+
+.pros {
+    width: 50%;
+    padding-left: 5%;
+}
+
+.cons {
+    width: 50%;
+    padding-right: 5%;
+}
+
+
+
+.proconbox {
+    display: flex;
+    width:75%;
+}
+
+.pc {
+    font-size: 1.5rem;
+}
+
+
+.whatdo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    color: grey;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.wd {
+    font-size: 42px;
+    padding-bottom: 50px;
+
+}
+
+.whatdotip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 10%;
+padding-left: 10%;
+}
+
+
+.whatdotxt{
+    justify-content: center;
+    width: 25%;
+    font-size: 16px;
+
+}
+
+.whatdopic {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+
+
+}
+
+
+#cottonpic {
+    display: flex;
+    min-width: 300px;
+    min-height:200px ;
+    background-image: url("../img/cotton.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#woolpic {
+    display: flex;
+    min-width: 300px;
+    min-height:200px ;
+    background-image: url("../img/wool.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#nylonpic {
+    display: flex;
+    min-width: 300px;
+    min-height:200px ;
+    background-image: url("../img/nylon.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#polyesterpic {
+    display: flex;
+    min-width: 300px;
+    min-height:200px ;
+    background-image: url("../img/polyester.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#acrylicpic {
+    display: flex;
+    min-width: 300px;
+    min-height:200px ;
+    background-image: url("../img/acrylic.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#viscosepic {
+    display: flex;
+    min-width: 300px;
+    min-height:200px ;
+    background-image: url("../img/viscose.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.pictxt {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+
+p {
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+
+    font-size: 22px;
+}
+
+.tagbg {
+
+    height: auto;
+    left: 0;
+    margin: 0;
+    min-height: 100%;
+    min-width: 674px;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+
+}
+
+.top{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 3%;
+}
+
+#first {
+
+    font-size: 64px;
+    font-weight: bolder;
+}
+
+.logo1 {
+
+    margin-right: 3%;
+}
+
+
+#search {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+
+#url {
+    margin: 0 auto;
+    padding:5px 5px 5px 5px;
+    width: 400px;
+    height: 20px;
+
+}
+
+.button {
+    background-color: transparent;
+    border-color: white;
+    padding:5px 50px 5px 50px;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: left;
+
+}
+
+.button:hover {
+    background: white;
+    color: #555555;
+}
+
+
+
+
+.backButton {
+    font-family: 'Montserrat', sans-serif;
+    color: dimgray;
+    border: solid;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.backButton:hover {
+    background: white;
+    color: #555555;
+}
+
+
+#itemcontain{
+    margin-left: 3%;
+    font-size: 44px;
+}
+
+
+.endResult {
+    text-align: center;
+    /*background-position: center;*/
+    background-size: cover;
+    height: 700px;
+    background-image: url("../img/end01.jpg");
+}
+
+
+#noResultButton {
+    font-family: 'Montserrat', sans-serif;
+    color: dimgray;
+    border: solid;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+#noResultButton:hover {
+    background: #e7e7e7;
+}
+
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background:white;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right:none;
+    border-color: lightgrey;
+
+}
+
+
+#loading {
+	display: none;
+}
+
+#results {
+	display: none;
+}
+
+#learnMore {
+	display: none;
+    width: 40rem;
+    padding-left: 10rem;
+}
+
+#allMaterial {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.spin {
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-content: center;
+}
+
+#quote {
+    white-space: pre;
+    font-size: 25px;
+}
+
+
+.lds-dual-ring {
+    width: 64px;
+    height: 64px;
+    padding-left: 48%;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid white;
+    border-color: white transparent white transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.results {
+    margin: 0%;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-around;
+}
+
+
+.chart-container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(250, 250, 250, 1);
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right:none;
+    border-color: lightgrey;
+    /*height: 27rem;*/
+    /*margin-left: 0%;*/
+}
+
+.chart-info{
+    display:flex;
+    /*justify-content: center;*/
+    color:dimgray;
+    flex-direction: column;
+    align-content: flex-start;
+    width: 40%;
+}
+.chartTitle {
+    justify-content: center;
+    color:dimgray;
+    font-size: 27px;
+    align-content: flex-start;
+
+    /*width: 40%;*/
+    /*height: auto;*/
+}
+
+.chart-text {
+    justify-content: center;
+    align-content: flex-start;
+
+    color:dimgray;
+    font-size: 17px;
+    /*height: auto;*/
+}
+
+
+.chart-radar{
+    position: relative;
+    /*margin: auto;*/
+    height: 50vh;
+    width: 50vw;
+    }
+
+
+.collapsible {
+    background-color: #777;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: lightgrey;
+}
+
+.refresh {
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /*background-color: rgba(0,0,0,0.1);*/
+    color: lightslategrey;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 2%;
+}
+
+.explainChart {
+    height: 30px;
+    background-color:rgba(250, 250, 250, 0.5)
+}
