@@ -48,7 +48,7 @@ function searchFunction(url) {
 
     var material = $('#allMaterial');
     var info = $('#info');
-    $.get('https://api.allorigins.win/get?method=raw&url=' + encodeURIComponent(url) + '&callback=?', function (data) {
+    $.get('https://api.allorigins.win/get?url=' + encodeURIComponent(url), function(data) {
 
         //find matching pattern in html source code
         var patt1 = /([0-9]+% (cotton|wool|acrylic|polyester|polyamide|nylon|viscose|rayon|lyocell|spandex|modal|elastane))|((cotton|wool|acrylic|polyester|polyamide|nylon|viscose|lyocell|rayon|spandex|modal|elastane) [0-9]+%)/ig;
@@ -256,31 +256,6 @@ var dataDictionary ={
             fill: true
         },
 };
-
-// var ctx = document.getElementById("myChart");
-//
-// var myRadarChart = new Chart(ctx, {
-//     type: 'radar',
-//     data: {
-//         labels: ['Energy use', 'Water use', 'Greenhouse gas emissions', 'Waste water', 'Land use'],
-//         datasets: datasets
-//     },
-//
-//     options: options = {
-//
-//         scale: {
-//             ticks: {
-//                 beginAtZero: true,
-//                 fontSize: 15
-//             },
-//             pointLabels: {
-//                 fontSize: 20
-//             },
-//         },
-//
-//     }
-//
-// });
 
 
 
